@@ -1,0 +1,182 @@
+\documentclass[12pt]{amsart}
+
+\pagestyle{empty}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{enumerate}% http://ctan.org/pkg/enumerate
+\usepackage{eucal}
+
+\usepackage{graphicx,psfrag} %only include if using pictures
+
+\usepackage{ifthen} %only include if using conditional package
+
+%\usepackage{xymatrix}
+
+
+%keep this...%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Side Margins
+\evensidemargin 0.1 in \oddsidemargin 0.1 in
+
+%Paragraph Size
+\parindent 24pt
+
+
+%size of page
+\textheight 9.6 in \textwidth 6.2 in
+\baselineskip 9.6 in \topmargin 0.005 in
+
+
+% ***********************************************************************
+\newcommand{\Normalstretch}{1.0} %change to define space between lines
+\renewcommand{\baselinestretch}{\Normalstretch}
+\newenvironment{singlespace}
+{\renewcommand{\baselinestretch}{1} \small \normalsize}
+{\renewcommand{\baselinestretch}{\Normalstretch} \small \normalsize}
+% ***********************************************************************
+\newcommand{\baseenvskip}{\baselineskip 2mm}
+
+% Standard Notation for Theorems and Lemmas
+\newtheorem{mydef}{Definition}
+
+\newtheorem{thm}{Theorem}
+
+\newtheorem{lemma}[thm]{Lemma}
+
+\newtheorem{claim}[thm]{Claim}
+
+\newtheorem{proposition}[thm]{Proposition}
+
+\newtheorem{conjecture}[thm]{Conjecture}
+
+\newtheorem{corollary}[thm]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{rmk}{Remark}[section]
+\newenvironment{remark}{\begin{rmk}\rm\baseenvskip}{\end{rmk}}
+\newtheorem{definition}[rmk]{Definition}
+
+%How numbering is defined in articles (standard)
+\numberwithin{equation}{section} \numberwithin{thm}{section}
+\numberwithin{rmk}{section} \numberwithin{figure}{section}
+
+% ************************ space ************************************
+\newcommand{\hhs}[1]{\hspace{#1mm}}
+\newcommand{\hs}{\hspace{5mm}}
+\newcommand{\vp}{\vspace{1mm}}
+\newcommand{\vs}{\vspace{5mm}}
+\newcommand{\jl}{$\frac{}{}$} %User defined for empty symbol to jump line
+% ********************** newcommand *********************************
+\newcommand{\mbf}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\hb}[1]{\hspace{-#1 mm}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\QED}{\hfill $\Box$}
+% *********************** frequently used math symbols from AMS *******
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+
+% ************** Some frequently used symbols - User defined ***********
+% ************** Also Called MACROS ************************************
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Hv}{\mathcal{H}_v}
+\newcommand{\h}{\mathcal{H}}
+\newcommand{\Ov}{\mathcal{O}_v}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Rn}{R^n}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Ce}{\widehat{\mathbb{C}}}
+\newcommand{\si}{\sigma}
+\newcommand{\Cn}{\mathbb{C}^n}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\p}{\partial}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\D}{\delta}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\finv}{f^{-1}}
+\newcommand{\im}{\imath}
+\newcommand{\ga}{\gamma}
+\newcommand{\ze}{\zeta}
+\newcommand{\fee}{\varphi}
+\newcommand{\noi}{\noindent}
+%
+% *******************************************************************
+% At First run of Template, only modify from here below........ *****
+% *******************************************************************
+
+
+\begin{document}
+
+\title{}
+
+% ******************** ABSTRACT *************************************
+%\begin{abstract}
+%Insert abstract
+%\end{abstract}
+% Must be present so the above information is displayed.
+% *******************************************************************
+% **** Begin Typing your work from here below ***********************
+% *******************************************************************
+
+
+Compute the joint density function for X and Y.
+
+
+\begin{proof}
+
+
+
+\section*{Using the Multiplicative Law for PDFs}
+
+\subsection*{1.}
+
+Since \( X \) is a uniform distribution in (0,2) we can say that X$\sim$U(a,b) . Then its PDF is:
+
+\[
+f_X(x) = \frac{1}{b - a}, \quad \text{for } x \in [a, b]
+\]
+
+For \( f_X(x) \), let \( a = 0 \), \( b = 2 \)
+
+
+For \( f_Y(y) \), let \( a = 0 \), \( b = x \)
+
+\[
+f_X(x) = \frac{1}{b - a} = \frac{1}{2 - 0} = \frac{1}{2}, \quad \text{for } 0 < x < 2
+\]
+\[
+f_Y(y) = \frac{1}{b - a} = \frac{1}{x - 0} = \frac{1}{x}
+\]
+
+Let \( X \) and \( Y \) be two jointly continuous random variables with joint PDF \( f \). Then, for all \( x \in \mathbb{R} \) and \( y \in \text{Supp}[Y] \), we have:
+\[
+f_{X,Y}(x, y)
+\]
+
+\subsection*{2. Define the Support}
+
+\[
+\text{Supp}[X] = \{ x \in \mathbb{R} : f(x) > 0 \} = \{ 0 < y < x < 2 \}
+\]
+
+\subsection*{3. Compute the Joint PDF of \( X, Y \)}
+
+\[
+f(x, y) = f_{Y|X}(y|x) \cdot f_X(x) = \left( \frac{1}{x} \right) \cdot \left( \frac{1}{2} \right) = \frac{1}{2x}
+\]
+
+\[
+f_{X,Y}(x, y) =
+\begin{cases}
+\frac{1}{2x} & \text{if } 0 < y < x < 2 \\
+0 & \text{otherwise}
+\end{cases}
+\]
+\end{proof}
+
+\end{document}
