@@ -125,101 +125,57 @@
 
 
 \textbf{
-\section{{Q1.4 Conditional Probability}}
+\section{{Q2 Functions and Independence}}
 }
 
 \vspace{2em}
-Compute the conditional probability density of X, conditional on \( Y = y, \, f_{X \mid Y}(x \mid y) \). (Make sure you state the values of y for which this exists.)
+Suppose $\text{X}$ is a discrete random variable and $\text{g:} \mathbb{R}$→$\mathbb{R}$ is a function from the real numbers to the real numbers.
 \vspace{2em}
+
+Q2.1 
+\subsubsection{Functions and Independence}
+Prove that if $\text{X}$ and $\text{g(X)}$ are independent, then $\text{g(X)}$must be a constant (a random variable with only a single point in its support).
+
+\vspace{2em}
+
 
 \begin{proof}
 
-\begin{thm}[Theorem 1.1.8: Conditional Probability]
-Let \( A, B \in S \) with \( P(B) > 0 \). Then the conditional probability of \( A \) given \( B \) is:
-\[
-P(A \mid B) = \frac{P(A \cap B)}{P(B)}
-\]
+\begin{thm}[Theorem 1.1.15: Independence of Events]
+Events $A,B, \in S$ are independent if $P(A\cap B)$ = $P(A)P(B)$
 \end{thm}
-We can use this definition to translate the conditional PDF of X$\vert$Y to : Let A = x and y = B
-\[
-\frac{f_{X,Y}(x, y)}{f_Y(y)}
-\]
-then
 
-\[
-f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x, y)}{f_Y(y)}
-\]
-1. Plug-in the joint PDF and marginal PDF from pervious questions:
+\begin{thm}[Theorem 1.1.9: Multiplicative Law of Probability]
+A and B are independent $A \Leftrightarrow B $ P(A$\mid$B)P(B) = P(A)P(B)
+                                                           $ \Leftrightarrow  $ P(A$\mid$B) = P(A). 
+ \end{thm}
+\begin{thm}[Theorem 1.3.17: Implications of Independence]
+Let X and Y be either two discrete random variables with joint PMF f or two jointly continuous random variables with joint PDF f. Then the following statements are equivalent. (Foundations of Agnostic Statistics pg.39)
 
-joint PDF = $\frac{1}{2x}$ , $0<y<x<2$
-marginal = marginal = $\frac{1}{2} \ln\left( \frac{2}{y} \right)$
+\begin{itemize}
+    \item \( X \perp\!\!\!\perp Y \)
+    \item \( \forall x, y \in \mathbb{R},\ f(x, y) = f_X(x) f_Y(y) \)
+    \item \( \forall x \in \mathbb{R} \) and \( \forall y \in \text{Supp}[Y],\ f_{X \mid Y}(x \mid y) = f_X(x) \)
+    \item \( \forall D, E \subseteq \mathbb{R},\ \text{the events } \{ X \in D \} \text{ and } \{ Y \in E \} \text{ are independent} \)
+    \item For all functions \( g \) of \( X \) and \( h \) of \( Y \), \( g(X) \perp\!\!\!\perp h(Y) \)
+\end{itemize}
+\end{thm}
+\vspace{2em}
 
+Now suppose \( X \) and \( g(X) \) are independent.
 
-\[
-f_{X \mid Y}(x \mid y) = \frac{\frac{1}{2x}}{\frac{1}{2} \ln\left( \frac{2}{y} \right)} = \frac{1}{x \ln\left( \frac{2}{y} \right)}
-\]
-
-
-We are given the conditional probability density function:
-\[
-f_{X \mid Y}(x \mid y) = \frac{1}{x \ln\left( \frac{2}{y} \right)}
-\]
-
-To compute its derivative with respect to \( x \), we first treat \( \ln\left( \frac{2}{y} \right) \) as a constant (since \( y \) is fixed) :(I verified the derivative using WolframAlpha
-
-\[
-f_{X \mid Y}(x \mid y) = \frac{1}{\ln\left( \frac{2}{y} \right)} \cdot \frac{1}{x}
-\]
-
-Multiple rule:
-\[
-\frac{d}{dx} f_{X \mid Y}(x \mid y) = \frac{1}{\ln\left( \frac{2}{y} \right)} \cdot \frac{d}{dx}\left( \frac{1}{x} \right)
-\]
-
-Differentiate \( \frac{1}{x} \) using the power rule:
-\[
-\frac{d}{dx}\left( \frac{1}{x} \right) = \frac{d}{dx}(x^{-1}) = -x^{-2} = -\frac{1}{x^2}
-\]
-
-Therefore, the derivative is:
-\[
-\frac{d}{dx} f_{X \mid Y}(x \mid y) = -\frac{1}{x^2 \ln\left( \frac{2}{y} \right)}
-\]
-
-
-\noindent
-2. Define the support: From the joint PDF \( 0 < y < x < 2 \). When conditioning on \( Y = y \), this defines the range of \( x \) as:
-\[
-x \in (y, 2), \quad \text{for } y \in (0, 2)
-\]
-
-\noindent
-Therefore, the full expression for the conditional PDF is:
-\[
-f_{X \mid Y}(x \mid y) =
-\begin{cases}
-\displaystyle \frac{1}{x \ln\left( \frac{2}{y} \right)}, & \text{if } y < x < 2 \text{ and } 0 < y < 2 \\
-0 & \text{otherwise}
-\end{cases}
-\]
+These three theorems can map our understanding to g(X) being a constant with whose support consists of a single value. If there is not information shared between these variables then they must be independent and g(X) must be a constant. 
 
 
 
 
-\vspace{1em}
+\end{thm}
 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.6\textwidth]{conditionalpb-ruler.png}
-\caption{3D surface plot of a function of \( x \) and \( y \). (e.g., conditional PDF \( f_{X \mid Y}(x \mid y) \))}
-\label{fig:conditional_pdf}
-\end{figure}
+\vspace{2em}
 
 
 
-
-I computed the derivative using WolframAlpha\footnote{\url{https://www.wolframalpha.com}}.
 \end{proof}
 
 \end{document}
