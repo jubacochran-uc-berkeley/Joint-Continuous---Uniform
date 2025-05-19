@@ -124,18 +124,42 @@
 % *******************************************************************
 
 
-Q 1.3 Marginal PDF
+\textbf{
+\section{{Q 1.3 Marginal PDF}}
+}
 
+\vspace{2em}
 Compute the marginal PDF of Y. 
-
+\vspace{2em}
 
 \begin{proof}
 
-Theorem 1.3.13 For Jointly continuous random variables X and Y with joint PDF f, the marginal PD of Y is:
+\subsection{Theorem 1.3.13 For Jointly continuous random variables X and Y with joint PDF f, the marginal PD of Y is:}
 
 \[
 f_Y(y) = \int_{-\infty}^{\infty} f(x, y)\, dx \quad \forall y \in \mathbb{R}
 \]
+
+{1. Define the Support: Support(Y)} = $y<x<2$. So the boundaries are x$\in$ [y,2]
+
+\[
+f_Y(y) = \int_{y}^{2} f(x, y)\, dx 
+\]
+
+$f_Y(x,y) = \frac{1}{2x}$ , $0<y<x<2$
+
+{Use the property of integral: $\int$ a* $f_(x)dx = a $ }
+
+
+$\frac{1}{2}* \int\frac{1}{x}dx$
+$\frac{1}{2}*\ln(\frac{2}{y})$
+
+\[
+\left[ \frac{1}{2} \ln x \right]_{x=y}^{x=2}
+= \frac{1}{2} \ln 2 - \frac{1}{2} \ln y
+= \frac{1}{2} \ln\left( \frac{2}{y} \right)
+\]
+
 
 \end{proof}
 
